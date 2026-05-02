@@ -24,8 +24,8 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
             >
               <li><Link href="/">Home</Link></li>
-              <li><Link href="/tiles">All Tiles</Link></li>
-              <li><Link href="/profile">My Profile</Link></li>
+              <li><Link href="/alltiles">All Tiles</Link></li>
+              <li><Link href="/">My Profile</Link></li>
             </ul>
           </div>
 
@@ -38,9 +38,9 @@ const Navbar = () => {
         {/* CENTER (Desktop Menu) */}
         <div className="navbar-center hidden lg:flex">
           <ul className="flex  justify-center items-center gap-6">
-            <li><Link href="/" className=" font-bold  bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Home</Link></li>
-            <li><Link href="/tiles" className=" font-bold  bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">All Tiles</Link></li>
-            <li><Link href="/profile" className=" font-bold  bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">My Profile</Link></li>
+            <li><Link href="/" className=" font-bold  bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent">Home</Link></li>
+            <li><Link href="/alltiles" className=" font-bold  bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent">All Tiles</Link></li>
+            <li><Link href="/" className=" font-bold  bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent">My Profile</Link></li>
           </ul>
         </div>
 
