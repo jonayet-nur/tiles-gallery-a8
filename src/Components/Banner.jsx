@@ -5,7 +5,7 @@ import {ArrowRight} from '@gravity-ui/icons';
 
 const Banner = () => {
   return (
-    <div className='w-11/12 mx-auto my-8'>
+    <div className='w-11/12 mx-auto mt-6'>
         <div
   className="hero min-h-screen rounded-2xl"
   style={{
