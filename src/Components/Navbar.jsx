@@ -55,7 +55,7 @@ const Navbar = () => {
           <Link href="/login" className="btn btn-outline btn-sm">
             Login
           </Link>
-          <Link href="/register" className="btn btn-primary btn-sm">
+          <Link href="/signup" className="btn btn-primary btn-sm">
             Register
           </Link>
         </div>
