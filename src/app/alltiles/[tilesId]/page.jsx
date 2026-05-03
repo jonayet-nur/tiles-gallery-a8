@@ -138,6 +138,7 @@
 
 
 
+
 import tilesData from '@/data'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -261,7 +262,7 @@ const TilesDetailsPage = async ({ params }) => {
               {tiles.inStock ? 'Add to Cart' : 'Not Available'}
             </button>
 
-            <WishlistButton />
+            <WishlistButton></WishlistButton>
           </div>
         </div>
 

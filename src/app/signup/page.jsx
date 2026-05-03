@@ -43,6 +43,12 @@ export default function SignUpPage() {
 
   };
 
+
+  const handleGoogle = async () => {
+  await authClient.signUp.social({
+    provider: "google",
+  });
+};
   return (
     <Card className="border mx-auto w-125 py-10 my-5">
       <h1 className="text-center text-2xl font-bold">Sign Up</h1>
@@ -114,8 +120,10 @@ export default function SignUpPage() {
           </Button>
         </div>
       </Form>
+          
+          <p className="text-center">Or</p>
 
-
+          <Button onClick={handleGoogle} variant="outline" className="w-full">  Sign up with google</Button>
     </Card>
   );
 }
