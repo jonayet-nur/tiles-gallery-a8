@@ -9,7 +9,7 @@ const AllTilesPage =async () => {
   return (
     <>
     <h2 className='text-center text-2xl font-extrabold mt-4 bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent'>AllTilesPage</h2>
-     <div className='grid justify-center items-center'>
+     <div className='grid justify-center items-center '>
          <SearchOpt ></SearchOpt>
      </div>
     <div className='w-10/12 mx-auto my-12'>

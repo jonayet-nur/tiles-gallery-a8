@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="w-11/12 max-w-7xl mx-auto flex justify-between items-center">
 
         {/* LEFT */}
-        <div className="navbar-start">
+        <div className="navbar-start ">
           {/* Mobile Menu */}
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -26,11 +26,17 @@ const Navbar = () => {
               <li><Link href="/">Home</Link></li>
               <li><Link href="/alltiles">All Tiles</Link></li>
               <li><Link href="/">My Profile</Link></li>
+               <Link href="/login" className="btn btn-outline btn-sm">
+            Login
+          </Link>
+          <Link href="/register" className="btn btn-primary btn-sm">
+            Register
+          </Link>
             </ul>
           </div>
 
           {/* Logo */}
-          <Link href="/" className=" text-3xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+          <Link href="/" className=" text-3xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent ml-auto lg:ml-0  absolute lg:static right-8">
             TileGallery
           </Link>
         </div>
@@ -45,7 +51,7 @@ const Navbar = () => {
         </div>
 
         {/* RIGHT */}
-        <div className="navbar-end flex gap-3  ">
+        <div className="navbar-end hidden lg:flex gap-3  ">
           <Link href="/login" className="btn btn-outline btn-sm">
             Login
           </Link>

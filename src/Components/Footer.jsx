@@ -5,7 +5,7 @@ import { ArrowRight, Mail, MapPin } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] text-gray-300 pt-16 pb-6">
-      <div className="w-11/12 max-w-7xl mx-auto">
+      <div className="w-11/12 max-w-4xl mx-auto">
 
         {/* Top CTA */}
         <div className="text-center mb-16">

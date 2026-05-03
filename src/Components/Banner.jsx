@@ -7,12 +7,13 @@ const Banner = () => {
   return (
     <div className='w-11/12 mx-auto mt-6'>
         <div
-  className="hero min-h-screen rounded-2xl"
+  className="hero rounded-2xl h-[70vh] lg:max-h-screen"
   style={{
     backgroundImage:
      "url('/assets/banner-img1.jpg')",
-      backgroundSize: "contain",
-    backgroundPosition: "center"
+      backgroundSize: "cover",
+    backgroundPosition: "center",
+      backgroundRepeat: "no-repeat"
   }}
 >
   <div className=""></div>
