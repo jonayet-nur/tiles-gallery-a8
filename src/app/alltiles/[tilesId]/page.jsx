@@ -142,7 +142,7 @@
 import tilesData from '@/data'
 import Image from 'next/image'
 import Link from 'next/link'
-import WishlistButton from '@/components/WishlistButton' // client component 
+ // client component 
 
 const TilesDetailsPage = async ({ params }) => {
   const { tilesId } = await params
@@ -262,7 +262,7 @@ const TilesDetailsPage = async ({ params }) => {
               {tiles.inStock ? 'Add to Cart' : 'Not Available'}
             </button>
 
-            <WishlistButton></WishlistButton>
+            
           </div>
         </div>
 
