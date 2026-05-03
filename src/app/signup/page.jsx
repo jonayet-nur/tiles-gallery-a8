@@ -13,6 +13,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { CgGoogle } from "react-icons/cg";
 
 export default function SignUpPage() {
 
@@ -123,7 +124,7 @@ export default function SignUpPage() {
           
           <p className="text-center">Or</p>
 
-          <Button onClick={handleGoogle} variant="outline" className="w-full">  Sign up with google</Button>
+          <Button onClick={handleGoogle} variant="outline" className="w-full"><CgGoogle></CgGoogle>  Sign up with google</Button>
     </Card>
   );
 }
