@@ -4,15 +4,17 @@ TilesGallery is a modern and responsive web application built with **Next.js** t
 
 ---
 
-## 📌 Features
+## 🚀 key Features
 
-- 🖼️ Beautiful tile gallery with dynamic data
-- 🔍 Search and filter tiles by name, tags, and style
-- 📄 Dynamic routing for tile detail pages
-- 📱 Fully responsive design (mobile, tablet, desktop)
-- ⚡ Fast performance with Next.js optimization
-- 🎨 Modern UI using Tailwind CSS
-- 🔄 Reusable and scalable components
+🔐 Secure Authentication – Email/Password login with modern auth system using better-auth
+🌐 Google Sign-In – Quick login using Google account
+🎨 Modern UI/UX – Built with Tailwind CSS + daisyUI + HeroUI
+⚡ Fast Performance – Powered by Next.js App Router
+🧩 Reusable Components – Clean and maintainable component structure
+🗄️ Database Integration – Data stored using MongoDB
+🔒 Protected Routes – Only authenticated users can access private pages
+📱 Fully Responsive – Works perfectly on mobile, tablet, and desktop
+✨ Interactive UI Elements – Smooth hover effects, icons via React Icons
 
 ---
 
@@ -25,3 +27,25 @@ TilesGallery is a modern and responsive web application built with **Next.js** t
 - **Vercel** – Deployment platform
 
 ---
+
+ ## 📦 NPM Packages Used
+
+### Here are the main packages used in this project:
+
+. next – React framework for production
+. react – UI library
+. react-dom – DOM rendering for React
+. tailwindcss – Utility-first CSS framework
+. daisyui – Tailwind CSS component library
+. @heroui/react – Modern UI components
+. @gravity-ui/icons – Icon library
+. react-icons – Popular icon packs (used for Google icon etc.)
+. better-auth – Authentication system
+. mongodb – Database
+. better-auth/adapters/mongodb – MongoDB adapter for auth
+
+---
+
+## 🌐 Live Demo
+
+👉 [Visit Live Site](https://tiles-gallery-a8-sable.vercel.app/)
