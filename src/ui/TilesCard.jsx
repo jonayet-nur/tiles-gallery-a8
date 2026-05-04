@@ -6,16 +6,16 @@ import React from 'react'
 const TilesCard = ({ tiles }) => {
   return (
     <div className='w-11/12 mx-auto'>
-      <div className="card bg-base-100 shadow-md h-[350px] flex flex-col">
+      <div className="group card bg-base-100 shadow-md h-[350px] flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
 
         {/* Image */}
-        <figure className="px-4 pt-4">
+        <figure className="px-4 pt-4 ">
           <Image
             src={tiles.image}
             alt={tiles.title}
             width={300}
             height={200}
-            className="rounded-xl object-cover h-[150px] w-full"
+            className="rounded-xl object-cover h-[150px] w-full transition-transform duration-500 group-hover:scale-110"
           />
         </figure>
 

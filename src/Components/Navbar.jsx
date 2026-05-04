@@ -4,8 +4,10 @@ import Link from "next/link"
 import {Bars} from '@gravity-ui/icons';
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathName = usePathname()
    const userData = authClient.useSession();
   
    const user = userData.data?.user
@@ -52,9 +54,39 @@ const Navbar = () => {
         {/* CENTER (Desktop Menu) */}
         <div className="navbar-center hidden lg:flex">
           <ul className="flex  justify-center items-center gap-6">
-            <li><Link href="/" className=" font-bold  bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent">Home</Link></li>
-            <li><Link href="/alltiles" className=" font-bold  bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent">All Tiles</Link></li>
-            <li><Link href="/profile" className=" font-bold  bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent">My Profile</Link></li>
+            {/* <li><Link href="/" className={`${pathName === "/" ? "text-red-400 bg-purple-100 p-1" : "bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent font-bold"} `}>Home</Link></li> */}
+
+<li>
+  <Link
+    href="/"
+    className={`relative px-3 py-1 font-semibold transition-all duration-300 ${
+      pathName === "/"
+        ? "text-red-500"
+        : "bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent"
+    } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-red-400 after:transition-all after:duration-300 ${
+      pathName === "/" ? "after:w-full" : "after:w-0 hover:after:w-full"
+    }`}
+  >
+    Home
+  </Link>
+</li>
+
+ <li><Link href="/alltiles" className={`relative px-3 py-1 font-semibold transition-all duration-300 ${
+      pathName === "/alltiles"
+        ? "text-red-500"
+        : "bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent"
+    } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-red-400 after:transition-all after:duration-300 ${
+      pathName === "/alltiles" ? "after:w-full" : "after:w-0 hover:after:w-full"
+    }`}>All Tiles</Link></li>
+
+
+<li><Link href="/profile" className={`relative px-3 py-1 font-semibold transition-all duration-300 ${
+      pathName === "/profile"
+        ? "text-red-500"
+        : "bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent"
+    } after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:bg-red-400 after:transition-all after:duration-300 ${
+      pathName === "/profile" ? "after:w-full" : "after:w-0 hover:after:w-full"
+    }`}>My Profile</Link></li>
           </ul>
         </div>
 
