@@ -13,6 +13,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
 // import { useRouter } from "next/navigation";
 
 export default function LoginInPage() {
@@ -45,6 +46,10 @@ export default function LoginInPage() {
     console.log({data, error})
 
    
+       if(error) {
+          toast.error('Login Failed')
+          
+       }
 
   };
 
@@ -118,7 +123,7 @@ export default function LoginInPage() {
            <Button
               onClick={handleGoogleLogin}
               variant="outline"
-              className="w-full flex items-center justify-center gap-2"
+              className="lg:w-full w-80 mx-auto flex items-center justify-center gap-2"
             >
               <FcGoogle className="text-lg " />
               Continue with Google

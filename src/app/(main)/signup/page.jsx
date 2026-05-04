@@ -16,6 +16,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { CgGoogle } from "react-icons/cg";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
 
 export default function SignUpPage() {
 
@@ -41,8 +42,10 @@ export default function SignUpPage() {
     console.log({data, error})
 
     if(!error) {
+       toast.success('SignUp Successfully')
         router.push('/')
     }
+    
 
   };
 

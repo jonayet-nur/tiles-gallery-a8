@@ -42,7 +42,19 @@ const Navbar = () => {
           <Link href="/signup" className="btn btn-primary btn-sm">
             Register
           </Link>
+
+           {
+            user && <div className="flex gap-5 items-center lg:hidden mt-2">
+              <Avatar size="sm">
+        <Avatar.Image alt="John Doe" src={user?.image} referrerPolicy="no-referrer" />
+        <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
+      </Avatar>
+            <Button onClick={handleSignout} size="sm" variant="danger">SignOut</Button>
+            </div>
+          }
             </ul>
+
+           
           </div>
 
           {/* Logo */}
