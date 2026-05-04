@@ -19,7 +19,7 @@ const AllTilesPage = () => {
         loadData();
     }, []);
 
-    // Filter courses based on search query
+    // Filter Tiles based on search query
     const filteredTiles = data.filter((d) =>
         d.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
