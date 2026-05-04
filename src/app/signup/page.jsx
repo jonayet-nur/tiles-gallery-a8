@@ -12,8 +12,10 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { CgGoogle } from "react-icons/cg";
+import { FcGoogle } from "react-icons/fc";
 
 export default function SignUpPage() {
 
@@ -46,85 +48,111 @@ export default function SignUpPage() {
 
 
   const handleGoogle = async () => {
-  await authClient.signUp.social({
+  await authClient.signIn.social({
     provider: "google",
   });
 };
   return (
-    <Card className="border mx-auto w-125 py-10 my-5">
-      <h1 className="text-center text-2xl font-bold">Sign Up</h1>
+    
+    <Card className="max-w-md mx-auto my-10 p-8 shadow-xl border rounded-2xl">
 
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
-        <TextField isRequired name="name" type="text">
-          <Label>Name</Label>
-          <Input placeholder="Enter your name" />
-          <FieldError />
-        </TextField>
+  {/* Header */}
+  <div className="text-center mb-6">
+    <h1 className="text-3xl font-bold tracking-tight">
+      Create Account
+    </h1>
+    <p className="text-sm text-gray-500 mt-2">
+      Join <span className="font-semibold text-primary">TilesGallery</span> to explore and share amazing designs.
+    </p>
+  </div>
 
-        <TextField isRequired name="image" type="text">
-          <Label>Image URL</Label>
-          <Input placeholder="Image URL" />
-          <FieldError />
-        </TextField>
+  {/* Form */}
+  <Form className="flex flex-col gap-4" onSubmit={onSubmit}>
 
-        <TextField
-          isRequired
-          name="email"
-          type="email"
-          validate={(value) => {
-            if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-              return "Please enter a valid email address";
-            }
+    <TextField isRequired name="name" type="text">
+      <Label>Full Name</Label>
+      <Input placeholder="" />
+      <FieldError />
+    </TextField>
 
-            return null;
-          }}
-        >
-          <Label>Email</Label>
-          <Input placeholder="john@example.com" />
-          <FieldError />
-        </TextField>
+    <TextField isRequired name="image" type="text">
+      <Label>Profile Image</Label>
+      <Input placeholder="" />
+      <FieldError />
+    </TextField>
 
-        <TextField
-          isRequired
-          minLength={8}
-          name="password"
-          type="password"
-          validate={(value) => {
-            if (value.length < 8) {
-              return "Password must be at least 8 characters";
-            }
-            if (!/[A-Z]/.test(value)) {
-              return "Password must contain at least one uppercase letter";
-            }
-            if (!/[0-9]/.test(value)) {
-              return "Password must contain at least one number";
-            }
+    <TextField
+      isRequired
+      name="email"
+      type="email"
+      validate={(value) => {
+        if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+          return "Enter a valid email address";
+        }
+        return null;
+      }}
+    >
+      <Label>Email Address</Label>
+      <Input placeholder="" />
+      <FieldError />
+    </TextField>
 
-            return null;
-          }}
-        >
-          <Label>Password</Label>
-          <Input placeholder="Enter your password" />
-          <Description>
-            Must be at least 8 characters with 1 uppercase and 1 number
-          </Description>
-          <FieldError />
-        </TextField>
+    <TextField
+      isRequired
+      minLength={8}
+      name="password"
+      type="password"
+      validate={(value) => {
+        if (value.length < 8) return "At least 8 characters required";
+        if (!/[A-Z]/.test(value)) return "Include one uppercase letter";
+        if (!/[0-9]/.test(value)) return "Include one number";
+        return null;
+      }}
+    >
+      <Label>Password</Label>
+      <Input placeholder="" />
+      <Description>
+        Minimum 8 characters, 1 uppercase & 1 number
+      </Description>
+      <FieldError />
+    </TextField>
 
-        <div className="flex gap-2">
-          <Button type="submit">
-            <Check />
-            Submit
-          </Button>
-          <Button type="reset" variant="secondary">
-            Reset
-          </Button>
-        </div>
-      </Form>
-          
-          <p className="text-center">Or</p>
+    {/* Buttons */}
+    <Button type="submit" className="w-full mt-2">
+     
+      Create Account
+    </Button>
 
-          <Button onClick={handleGoogle} variant="outline" className="w-full"><CgGoogle></CgGoogle>  Sign up with google</Button>
-    </Card>
+    {/* <Button type="reset" variant="secondary" className="w-full">
+      Reset
+    </Button> */}
+  </Form>
+
+  {/* Divider */}
+  <div className="flex items-center gap-3 my-6">
+    <div className="flex-1 h-px bg-gray-200"></div>
+    <span className="text-sm text-gray-400">OR Register With</span>
+    <div className="flex-1 h-px bg-gray-200"></div>
+  </div>
+
+  {/* Google Button */}
+  <Button
+    onClick={handleGoogle}
+    variant="outline"
+    className="w-full flex items-center justify-center gap-2"
+  >
+    <FcGoogle className="text-lg " />
+    Continue with Google
+  </Button>
+
+  {/* Footer */}
+  <p className="text-center text-sm text-gray-500 mt-6">
+    Already have an account?{" "}
+    <Link href="/login" className="text-primary font-medium cursor-pointer hover:underline">
+      Sign In
+    </Link>
+  </p>
+
+</Card>
   );
 }

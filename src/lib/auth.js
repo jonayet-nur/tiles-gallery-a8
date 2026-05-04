@@ -3,6 +3,8 @@ import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 
 const client = new MongoClient(process.env.MONGODB_URI);
+// IMPORTANT: connect first
+await client.connect();
 const db = client.db("tiles-gallery");
 
 export const auth = betterAuth({

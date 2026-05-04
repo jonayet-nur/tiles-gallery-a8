@@ -2,9 +2,17 @@
 
 import Link from "next/link"
 import {Bars} from '@gravity-ui/icons';
+import { authClient } from "@/lib/auth-client";
+import { Avatar, Button } from "@heroui/react";
 
 const Navbar = () => {
-   
+   const userData = authClient.useSession();
+  
+   const user = userData.data?.user
+   console.log(user)
+   const handleSignout = async()=>{
+    await authClient.signOut();
+   }
   return (
     
 
@@ -25,11 +33,11 @@ const Navbar = () => {
             >
               <li><Link href="/">Home</Link></li>
               <li><Link href="/alltiles">All Tiles</Link></li>
-              <li><Link href="/">My Profile</Link></li>
+              <li><Link href="/profile">My Profile</Link></li>
                <Link href="/login" className="btn btn-outline btn-sm">
             Login
           </Link>
-          <Link href="/register" className="btn btn-primary btn-sm">
+          <Link href="/signup" className="btn btn-primary btn-sm">
             Register
           </Link>
             </ul>
@@ -46,18 +54,33 @@ const Navbar = () => {
           <ul className="flex  justify-center items-center gap-6">
             <li><Link href="/" className=" font-bold  bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent">Home</Link></li>
             <li><Link href="/alltiles" className=" font-bold  bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent">All Tiles</Link></li>
-            <li><Link href="/" className=" font-bold  bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent">My Profile</Link></li>
+            <li><Link href="/profile" className=" font-bold  bg-linear-to-br from-[#0f172a] via-[#111827] to-[#020617] bg-clip-text text-transparent">My Profile</Link></li>
           </ul>
         </div>
 
         {/* RIGHT */}
-        <div className="navbar-end hidden lg:flex gap-3  ">
-          <Link href="/login" className="btn btn-outline btn-sm">
+        <div className="navbar-end hidden lg:flex gap-3 ">
+         
+         <div className="">
+           {!user && <ul className="flex gap-3">
+            <li> <Link href="/login" className="btn btn-outline btn-sm">
             Login
           </Link>
-          <Link href="/signup" className="btn btn-primary btn-sm">
+          </li>
+          <li><Link href="/signup" className="btn btn-primary btn-sm">
             Register
-          </Link>
+          </Link></li>
+           </ul>}
+         </div>
+          {
+            user && <div className="flex gap-5 items-center">
+              <Avatar size="sm">
+        <Avatar.Image alt="John Doe" src={user?.image} referrerPolicy="no-referrer" />
+        <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
+      </Avatar>
+            <Button onClick={handleSignout} size="sm" variant="danger">SignOut</Button>
+            </div>
+          }
         </div>
 
       </div>

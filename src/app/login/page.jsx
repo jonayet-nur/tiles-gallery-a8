@@ -12,10 +12,16 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { FcGoogle } from "react-icons/fc";
 // import { useRouter } from "next/navigation";
 
 export default function LoginInPage() {
 
+  const handleGoogleLogin = async () => {
+  await authClient.signIn.social({
+    provider: "google",
+  });
+};
     // const router = useRouter()
 
   const onSubmit = async (e) => {
@@ -95,18 +101,28 @@ export default function LoginInPage() {
           <FieldError />
         </TextField>
 
-        <div className="flex gap-2">
-          <Button type="submit">
+       
+          <Button type="submit" className="w-full">
             <Check />
-            Submit
+            Login
           </Button>
-          <Button type="reset" variant="secondary">
-            Reset
-          </Button>
-        </div>
+         
+       {/* Divider */}
+  <div className="flex items-center gap-3 my-2">
+    <div className="flex-1 h-px bg-gray-200"></div>
+    <span className="text-sm text-gray-400">OR Login With</span>
+    <div className="flex-1 h-px bg-gray-200"></div>
+  </div>
       </Form>
 
-
+           <Button
+              onClick={handleGoogleLogin}
+              variant="outline"
+              className="w-full flex items-center justify-center gap-2"
+            >
+              <FcGoogle className="text-lg " />
+              Continue with Google
+            </Button>
     </Card>
   );
 }
