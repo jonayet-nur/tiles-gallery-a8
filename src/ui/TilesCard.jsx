@@ -20,7 +20,7 @@ const TilesCard = ({ tiles }) => {
         </figure>
 
         {/* new */}
-         <div className="absolute top-7 left-8">
+         <div className="absolute top-9 left-9">
             <span className="px-4 py-2 bg-white/95 backdrop-blur-md text-sm font-semibold text-gray-700 rounded-2xl shadow">
               {tiles.category}
             </span>
